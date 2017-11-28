@@ -26,10 +26,10 @@ sorted=${acc}_sorted
 #bowtie2 --local --score-min $score -x Ceiba_unique_baits -1 $fwd_p  -2 $rev_p  -U $un_p  -S $sam 2>$bowtie
 bwa aln ceiba2.fna $fwd_p > $1_aln
 bwa aln ceiba2.fna $rev_p > $2_aln
-bwa sampe ceiba2 $1_aln $2_aln $fwd_p $rev_p > $sam
+bwa sampe ceiba2.fna $1_aln $2_aln $fwd_p $rev_p > $sam
 samtools view -bS $sam | samtools sort - $sorted
 samtools index $index
-samtools mpileup -E -uf ceiba_new_baits.fna  $index > $pileup
+samtools mpileup -E -uf ceiba2.fna  $index > $pileup
 bcftools view -cg $pileup > $vcf
 rm *.sam
 rm *.pileup
