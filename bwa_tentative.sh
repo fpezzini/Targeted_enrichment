@@ -1,9 +1,9 @@
-#FIRST:bwa index ceiba2.fna ceiba_baits
+#FIRST:bwa index ceiba2.fna ceiba2
 
 #! /bin/bash -x
-# to trim again using cutadapt
-#Catherine Kidner 28 Oct 2014
-# Assumes all your reads are in a folder called trimmed and all are gzipped.
+# using bwa to generate sam/bam files
+# Flavia Pezzini 29 november 2017 | modified from Catherine Kidner bam_me.sh
+# Output from trimmomatic
 
 echo "Hello world"
 
